@@ -65,12 +65,10 @@ client.on('message_create', async (msg) => {
         cron.schedule('0 * * * *', async () => {
             try {
                 const media = MessageMedia.fromFilePath(caminhoImagem);
-                const legenda = `Atestado Médico e Declaração de Horas 📄⚡
-Atestado Médico: R$ 35,00
-Declaração de Horas: R$ 25,00
+                const legenda = `Atestado Médico 📄⚡
+Atestado Médico: R$ 40,00
 
-Tudo rápido, sem burocracia e com envio imediato no seu WhatsApp! Chame agora mesmo e garanta o seu:
-👉 https://wa.me/5511911364536`;
+Tudo rápido, sem burocracia e com envio imediato no seu WhatsApp! Chame agora mesmo e garanta o seu`;
 
                 await client.sendMessage(chat.id._serialized, media, { caption: legenda });
                 console.log(`[${new Date().toLocaleTimeString()}] Mensagem enviada com sucesso para o grupo ${chat.name}!`);
